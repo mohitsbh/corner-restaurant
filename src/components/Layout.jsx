@@ -194,7 +194,6 @@ export default function Layout() {
               <span className={`block w-5 h-[1.5px] bg-off-white rounded-full transition-all duration-300 mt-[5.5px] ${menuOpen ? 'opacity-0 scale-0' : ''} group-hover:bg-primary`} />
               <span className={`block w-5 h-[1.5px] bg-off-white rounded-full transition-all duration-300 mt-[5.5px] ${menuOpen ? '-rotate-45 -translate-y-[5.5px]' : ''} group-hover:bg-primary`} />
             </button>
-          </div>
         </div>
       </header>
 

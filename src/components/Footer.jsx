@@ -3,7 +3,7 @@ import Logo from './Logo'
 
 export default function Footer() {
   return (
-    <footer className="w-full py-20 bg-surface-container-lowest border-t border-gold-glass-stroke">
+    <footer className="w-full py-16 bg-surface-container-lowest border-t border-gold-glass-stroke">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
         <div className="space-y-6">
           <Link to="/" className="text-primary font-headline-md text-headline-md inline-block">Corner Corner</Link>
@@ -28,6 +28,7 @@ export default function Footer() {
             <li><Link to="/venue-hire" className="font-label-md text-label-md text-muted-silver hover:text-primary transition-colors">Venue Hire</Link></li>
             <li><Link to="/farm" className="font-label-md text-label-md text-muted-silver hover:text-primary transition-colors">Vertical Farm</Link></li>
             <li><Link to="/contact" className="font-label-md text-label-md text-muted-silver hover:text-primary transition-colors">Contact</Link></li>
+            <li><Link to="/about" className="font-label-md text-label-md text-muted-silver hover:text-primary transition-colors">Locals Discount</Link></li>
           </ul>
         </div>
         <div className="space-y-4">
@@ -54,8 +55,8 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-16 pt-8 border-t border-gold-glass-stroke/50 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="font-label-sm text-label-sm text-muted-silver">&copy; 2026 Corner Corner London. All Rights Reserved.</p>
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-12 pt-8 border-t border-gold-glass-stroke/50 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="font-label-sm text-label-sm text-muted-silver">&copy; 2026 Corner Corner London. All Rights Reserved. Crafted in Partnership by <span className="text-primary">Broadwick</span> and <span className="text-primary">KERB</span>.</p>
         <div className="flex gap-8">
           <a href="https://www.instagram.com/cornercornercanadawater/" target="_blank" rel="noopener" className="font-label-sm text-label-sm text-muted-silver hover:text-primary transition-colors">Instagram</a>
           <a href="https://www.tiktok.com/@cornercornercanadawater" target="_blank" rel="noopener" className="font-label-sm text-label-sm text-muted-silver hover:text-primary transition-colors">TikTok</a>

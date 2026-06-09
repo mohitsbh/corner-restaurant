@@ -10,6 +10,9 @@ const EVENTS = [
   { day: '27', month: 'Jun', tag: 'Live Music', title: 'Ollie Halvorsen — Musician', time: '6pm – 9pm · Free Entry' },
   { day: '14', month: 'Jun', tag: 'World Cup 26', title: 'Germany vs Curaçao', time: '6pm · Big Screen' },
   { day: '17', month: 'Jun', tag: 'World Cup 26', title: 'England vs Croatia', time: '9pm · Big Screen' },
+  { day: '10', month: 'Jan', tag: 'Recurring', title: 'The Daily Desk — Remote Workers', time: 'Daily · Free' },
+  { day: '13', month: 'Jan', tag: 'Recurring', title: 'Corner Corner Run Club', time: 'Every Mon 6:30pm · Free' },
+  { day: '10', month: 'Jan', tag: 'Recurring', title: 'Vertical Farm Tour', time: 'Every Fri 11am · Free' },
 ]
 
 const ARTISTS = [
@@ -23,52 +26,60 @@ const ARTISTS = [
 export default function Events() {
   return (
     <>
-      <PageHero label="Rhythm" title="What's On" subtitle="Free live music, creative workshops, run club, World Cup screenings — programmed by Broadwick. Music events run Thu-Sun." />
-      <Section>
+      <PageHero label="Rhythm" title="What's On" subtitle="Free live music, creative workshops, run club, World Cup screenings — programmed by Broadwick." />
+      <Section className="!py-10">
         <Container>
           <SectionHeader title="Upcoming Events" text="Our music events are free to attend — book ahead to secure your spot." />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {EVENTS.map((e, i) => (
               <Reveal delay={i * 80} key={e.title}>
-                <div className="flex gap-5 p-5 glass rounded-xl transition-all duration-300 hover:border-gold/20 hover:bg-[#161616] hover:translate-x-1 group">
-                  <div className="text-center min-w-[64px] py-3 px-2 bg-gold/10 rounded-xl group-hover:bg-gold/15 transition-colors"><span className="block font-serif text-[1.75rem] text-gold leading-none group-hover:scale-110 transition-transform">{e.day}</span><span className="text-[0.6875rem] uppercase tracking-[0.1em] text-[#888]">{e.month}</span></div>
-                  <div className="flex-1"><span className="text-[0.6875rem] tracking-[0.1em] uppercase text-gold font-semibold">{e.tag}</span><h3 className="font-serif text-lg text-white mt-1.5 mb-2">{e.title}</h3><p className="text-xs text-[#888]">{e.time}</p></div>
+                <div className="glass-panel p-4 flex gap-4 group hover:-translate-y-1 transition-all duration-300">
+                  <div className="text-center min-w-[56px] py-2 px-2 bg-primary/10 rounded-xl">
+                    <span className="block font-headline-md text-headline-md text-primary leading-none">{e.day}</span>
+                    <span className="font-label-sm text-label-sm text-on-surface-variant">{e.month}</span>
+                  </div>
+                  <div className="flex-1">
+                    <span className="font-label-sm text-label-sm text-primary">{e.tag}</span>
+                    <h3 className="font-headline-md text-headline-md text-on-surface mt-1 mb-1">{e.title}</h3>
+                    <p className="font-body-md text-body-md text-on-surface-variant">{e.time}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}
           </div>
         </Container>
       </Section>
-      <Section dark className="bg-dots">
+      <Section dark className="!py-10">
         <Container>
           <SectionHeader title="Regular Events" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: '☕', tag: 'Daily', title: 'The Daily Desk', desc: 'Co-working space with coffee, WiFi, and community.' },
-              { icon: '🏃', tag: 'Mon 6:30pm', title: 'Run Club', desc: 'Free group run. All paces welcome.' },
-              { icon: '🌿', tag: 'Fri 11am', title: 'Vertical Farm Tour', desc: 'Tour London\'s largest vertical farm.' },
+              { tag: 'Daily', title: 'The Daily Desk', desc: 'Co-working space with coffee, WiFi, and community.' },
+              { tag: 'Mon 6:30pm', title: 'Run Club', desc: 'Free group run. All paces welcome.' },
+              { tag: 'Fri 11am', title: 'Vertical Farm Tour', desc: 'Tour London\'s largest vertical farm.' },
             ].map((r, i) => (
               <Reveal delay={i * 100} key={r.title}>
-                <div className="flex gap-5 p-5 glass rounded-xl">
-                  <div className="text-center min-w-[64px] py-3 px-2 bg-gold/10 rounded-xl text-2xl">{r.icon}</div>
-                  <div className="flex-1"><span className="text-[0.6875rem] tracking-[0.1em] uppercase text-gold font-semibold">{r.tag}</span><h3 className="font-serif text-lg text-white mt-1.5 mb-2">{r.title}</h3><p className="text-xs text-[#888]">{r.desc}</p></div>
-                </div>
+                <GlassCard className="p-5">
+                  <span className="font-label-sm text-label-sm text-primary">{r.tag}</span>
+                  <h3 className="font-headline-md text-headline-md text-on-surface mt-2 mb-2">{r.title}</h3>
+                  <p className="font-body-md text-body-md text-on-surface-variant">{r.desc}</p>
+                </GlassCard>
               </Reveal>
             ))}
           </div>
         </Container>
       </Section>
-      <Section>
+      <Section className="!py-10">
         <Container>
-          <SectionHeader title="Meet the Artists" text="Corner Corner hosts a music initiative supporting emerging talent, giving artists the chance to perform on Friday and Saturday nights." />
-          <div className="flex flex-wrap gap-3">
+          <SectionHeader title="Meet the Artists" text="Corner Corner hosts a music initiative supporting emerging talent." />
+          <div className="flex flex-wrap gap-2">
             {ARTISTS.map((a, i) => (
               <Reveal delay={i * 30} as="span" key={a}>
-                <span className="px-4 py-3 bg-[#111] rounded-full text-xs text-[#b8b0a8] border border-white/[0.04] transition-all hover:border-gold/30 hover:text-gold inline-block">{a}</span>
+                <span className="px-3 py-1.5 bg-surface-container-low rounded-full font-body-md text-body-md text-on-surface-variant border border-gold-glass-stroke/20 inline-block">{a}</span>
               </Reveal>
             ))}
           </div>
-          <p className="text-[#b8b0a8] mt-8">Want to perform? <a href="mailto:hello@cornercorner.com" className="text-gold">Get in touch →</a></p>
+          <p className="text-on-surface-variant font-body-md text-body-md mt-4">Want to perform? <a href="mailto:hello@cornercorner.com" className="text-primary">Get in touch &rarr;</a></p>
         </Container>
       </Section>
     </>

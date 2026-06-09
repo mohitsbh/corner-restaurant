@@ -26,7 +26,7 @@ export function SectionLabel({ children, className = '' }) {
 }
 
 export function SectionTitle({ children, as: Tag = 'h2', className = '' }) {
-  return <Tag className={`font-headline-lg text-headline-lg text-off-white mb-5 ${className}`}>{children}</Tag>
+  return <Tag className={`font-headline-lg text-headline-lg text-off-white mb-3 ${className}`}>{children}</Tag>
 }
 
 export function SectionText({ children, className = '' }) {
@@ -35,7 +35,7 @@ export function SectionText({ children, className = '' }) {
 
 export function SectionHeader({ label, title, text, center }) {
   return (
-    <div className={`max-w-[720px] mb-14 ${center ? 'mx-auto text-center' : ''}`}>
+    <div className={`max-w-[720px] mb-4 ${center ? 'mx-auto text-center' : ''}`}>
       {label && <Reveal delay={0}><SectionLabel>{label}</SectionLabel></Reveal>}
       {title && <Reveal delay={100}><SectionTitle>{title}</SectionTitle></Reveal>}
       {text && <Reveal delay={200}><SectionText>{text}</SectionText></Reveal>}
@@ -44,7 +44,7 @@ export function SectionHeader({ label, title, text, center }) {
 }
 
 export function Section({ children, className = '', dark, id }) {
-  return <section id={id} className={`py-20 md:py-30 lg:py-40 ${dark ? 'bg-surface-container-lowest' : 'bg-surface'} ${className}`}>{children}</section>
+  return <section id={id} className={`py-12 md:py-16 lg:py-20 ${dark ? 'bg-surface-container-lowest' : 'bg-surface'} ${className}`}>{children}</section>
 }
 
 export function Container({ children, className = '' }) {
@@ -76,12 +76,13 @@ export function GlassCard({ children, className = '' }) {
 
 export function PageHero({ label, title, subtitle, children }) {
   return (
-    <section className="relative h-[819px] lg:h-[921px] flex items-end pb-32 overflow-hidden bg-surface">
+    <section className="relative min-h-[300px] lg:min-h-[380px] flex items-center overflow-hidden bg-surface py-10 lg:py-14">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent z-10" />
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 30% 50%, #c9a96e 0%, transparent 60%)' }} />
       </div>
       <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
-        <div className="max-w-2xl space-y-6">
+        <div className="max-w-2xl space-y-4">
           {label && <Reveal delay={0}><span className="inline-block text-primary font-label-sm text-label-sm tracking-[0.2em] uppercase border-b border-primary/30 pb-2">{label}</span></Reveal>}
           {title && <Reveal delay={100}><h1 className="font-display-lg text-display-lg text-off-white leading-tight">{title}</h1></Reveal>}
           {subtitle && <Reveal delay={200}><p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-lg">{subtitle}</p></Reveal>}

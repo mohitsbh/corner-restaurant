@@ -3,43 +3,43 @@ import { Container, Section, SectionHeader, Button, PageHero, Reveal, GlassCard,
 export default function Farm() {
   return (
     <>
-      <PageHero label="Nature" title="Vertical Farm" subtitle="London's largest commercial indoor vertical farm. Growing hyper-local, sustainable produce year-round — right here on site." />
-      <Section>
+      <PageHero label="Nature" title="Vertical Farm" subtitle="London's largest commercial indoor vertical farm. Growing hyper-local, sustainable produce year-round." />
+      <Section className="!py-10">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <Reveal delay={0}><div className="rounded-xl overflow-hidden image-hover"><img src={IMAGES.farm} alt="Harvest London vertical farm" className="w-full h-[450px] object-cover" loading="lazy" /></div></Reveal>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+            <Reveal delay={0}><div className="rounded overflow-hidden"><img src={IMAGES.farm} alt="Harvest London vertical farm" className="w-full h-[300px] object-cover" loading="lazy" /></div></Reveal>
             <div>
-              <SectionHeader title="Developed With Harvest London" text="Our on-site vertical farm is a pioneering partnership with Harvest London, the UK's leading vertical farming company. Using innovative hydroponic technology, we grow a variety of crops in a completely controlled environment — no pesticides, no soil, minimal water." />
-              <Reveal delay={300}><div className="grid grid-cols-3 gap-6 py-8">
-                <GlassCard gold className="text-center p-5 hover-glow"><span className="font-serif text-2xl text-gold block">95%</span><span className="text-xs text-[#666] uppercase tracking-[0.08em]">Less Water</span></GlassCard>
-                <GlassCard gold className="text-center p-5 hover-glow"><span className="font-serif text-2xl text-gold block">0</span><span className="text-xs text-[#666] uppercase tracking-[0.08em]">Pesticides</span></GlassCard>
-                <GlassCard gold className="text-center p-5 hover-glow"><span className="font-serif text-2xl text-gold block">365</span><span className="text-xs text-[#666] uppercase tracking-[0.08em]">Days/Year</span></GlassCard>
-              </div></Reveal>
+              <SectionHeader title="Developed With Harvest London" text="Our on-site vertical farm uses innovative hydroponic technology to grow a variety of crops in a completely controlled environment — no pesticides, no soil, minimal water." />
+              <div className="grid grid-cols-3 gap-4 py-4">
+                <GlassCard className="text-center p-5"><span className="font-display-lg text-display-lg text-primary block">95%</span><span className="font-label-sm text-label-sm text-on-surface-variant">Less Water</span></GlassCard>
+                <GlassCard className="text-center p-5"><span className="font-display-lg text-display-lg text-primary block">0</span><span className="font-label-sm text-label-sm text-on-surface-variant">Pesticides</span></GlassCard>
+                <GlassCard className="text-center p-5"><span className="font-display-lg text-display-lg text-primary block">365</span><span className="font-label-sm text-label-sm text-on-surface-variant">Days/Year</span></GlassCard>
+              </div>
               <Reveal delay={400}><Button href="https://harvestlondon.com" variant="primary">Visit Harvest London</Button></Reveal>
             </div>
           </div>
         </Container>
       </Section>
-      <Section dark className="bg-dots">
+      <Section dark className="!py-10">
         <Container>
-          <SectionHeader title="Book a Farm Tour" text="Come and see the farm in action. Tours are available for individuals, corporate groups, school groups, and charities. The tour is free." />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          <SectionHeader title="Book a Farm Tour" text="Come and see the farm in action. Tours are free and available for individuals, groups, schools, and charities." />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             {[
-              { title: 'Public Tours', time: 'Fridays 11am', desc: 'Free guided tour open to everyone. Book in advance.' },
-              { title: 'Corporate Tours', time: 'By arrangement', desc: 'Team-building and ESG-focused visits. Group sizes up to 20.' },
-              { title: 'School & Charity', time: 'By arrangement', desc: 'Educational tours for schools and charitable organisations.' },
-              { title: 'Private Events', time: 'By arrangement', desc: 'Dine inside the Plant Room — a unique greenhouse setting.' },
+              { title: 'Public Tours', time: 'Fridays 11am', desc: 'Free guided tour open to everyone.' },
+              { title: 'Corporate Tours', time: 'By arrangement', desc: 'Team-building visits. Groups up to 20.' },
+              { title: 'School & Charity', time: 'By arrangement', desc: 'Educational tours for schools and charities.' },
+              { title: 'Private Events', time: 'By arrangement', desc: 'Dine inside the Plant Room greenhouse.' },
             ].map((t, i) => (
               <Reveal delay={i * 100} key={t.title}>
-                <GlassCard className="p-6 hover-glow">
-                  <h4 className="font-serif text-[1.25rem] text-white mb-1">{t.title}</h4>
-                  <p className="text-xs text-gold uppercase tracking-[0.08em] mb-3">{t.time}</p>
-                  <p className="text-sm text-[#888] leading-relaxed">{t.desc}</p>
+                <GlassCard className="p-5">
+                  <h4 className="font-headline-md text-headline-md text-on-surface mb-1">{t.title}</h4>
+                  <p className="font-label-sm text-label-sm text-primary mb-2">{t.time}</p>
+                  <p className="font-body-md text-body-md text-on-surface-variant">{t.desc}</p>
                 </GlassCard>
               </Reveal>
             ))}
           </div>
-          <Reveal delay={500}><Button href="mailto:hello@cornercorner.com" variant="primary">Book a Tour →</Button></Reveal>
+          <Reveal delay={500}><Button href="mailto:hello@cornercorner.com" variant="primary">Book a Tour &rarr;</Button></Reveal>
         </Container>
       </Section>
     </>
