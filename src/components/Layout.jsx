@@ -180,7 +180,7 @@ export default function Layout() {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent animate-pulse-glow" />
           )}
           <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 flex items-center justify-between h-14 lg:h-16">
-            <Link to="/" className={`text-white transition-all duration-500 hover:text-gold flex items-center h-full mr-3 lg:mr-5 ${scrolled ? 'w-20' : 'w-24 sm:w-28'}`}>
+            <Link to="/" className={`text-white transition-all duration-500 hover:text-gold flex items-center h-full mr-1 lg:mr-2 ${scrolled ? 'w-20' : 'w-24 sm:w-28'}`}>
               <Logo className="w-full h-auto" />
             </Link>
 
