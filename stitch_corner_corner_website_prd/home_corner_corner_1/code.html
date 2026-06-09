@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Corner Corner | Eat. Drink. Gather.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed": "#ffdea7",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed": "#271900",
+                        "on-tertiary": "#203051",
+                        "on-tertiary-fixed-variant": "#374669",
+                        "secondary-container": "#5d4515",
+                        "on-surface": "#e5e2e1",
+                        "tertiary-container": "#9dadd5",
+                        "surface-bright": "#3a3939",
+                        "secondary-fixed-dim": "#e4c286",
+                        "on-secondary": "#412d00",
+                        "surface": "#131313",
+                        "surface-container-low": "#1c1b1b",
+                        "muted-silver": "#b8b0a8",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-fixed": "#d8e2ff",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-container": "#d5b479",
+                        "secondary": "#e4c286",
+                        "outline-variant": "#4d463a",
+                        "on-primary": "#412d00",
+                        "error-container": "#93000a",
+                        "primary-container": "#c9a96e",
+                        "on-tertiary-container": "#314163",
+                        "on-primary-fixed": "#261900",
+                        "on-surface-variant": "#d0c5b5",
+                        "background": "#131313",
+                        "surface-dim": "#131313",
+                        "primary-fixed": "#ffdea4",
+                        "off-white": "#f5f0eb",
+                        "primary": "#e6c487",
+                        "surface-container": "#201f1f",
+                        "tertiary": "#b8c8f2",
+                        "primary-fixed-dim": "#e4c285",
+                        "deep-gray": "#1c1c1c",
+                        "gold-glass-stroke": "rgba(201, 169, 110, 0.1)",
+                        "on-primary-container": "#543d0c",
+                        "surface-tint": "#e4c285",
+                        "on-primary-fixed-variant": "#5a4312",
+                        "on-secondary-fixed-variant": "#5a4313",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#998f81",
+                        "inverse-primary": "#745a27",
+                        "on-tertiary-fixed": "#081b3b",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#b6c6ef",
+                        "surface-container-highest": "#353534",
+                        "surface-variant": "#353534",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "base": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Noto Serif"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Noto Serif"],
+                        "headline-lg-mobile": ["Noto Serif"],
+                        "headline-md": ["Noto Serif"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+            color: #e5e2e1;
+        }
+        .glass-card {
+            background: rgba(32, 31, 31, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(201, 169, 110, 0.1);
+        }
+        .ambient-glow {
+            box-shadow: 0px 20px 40px rgba(0,0,0,0.5);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-gold-glass-stroke shadow-2xl h-20">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-full">
+<div class="font-headline-md text-headline-md text-primary tracking-tight">Corner Corner</div>
+<div class="hidden md:flex gap-10">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">What's On</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Venue Hire</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">The Farm</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Experiences</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="hidden md:block font-label-md text-label-md text-primary hover:bg-white/5 transition-all duration-300 px-4 py-2 rounded">Inquiry</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg active:scale-95 duration-200">Book Now</button>
+</div>
+</div>
+</nav>
+<!-- 1. Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<video autoplay="" class="w-full h-full object-cover opacity-60" loop="" muted="" playsinline="">
+<source src="https://assets.mixkit.co/videos/preview/mixkit-pouring-wine-into-a-glass-in-slow-motion-4416-large.mp4" type="video/mp4"/>
+</video>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile">
+<h1 class="font-display-lg text-display-lg md:text-[80px] text-primary mb-6 leading-none">Eat. Drink. Gather.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+                A multi-concept sanctuary in the heart of London. Artisanal food hall, curated spirits, and communal spaces designed for the modern urbanite.
+            </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-10 py-5 rounded uppercase tracking-widest hover:brightness-110 transition-all">Explore the Hall</button>
+<button class="border border-primary text-primary font-label-md text-label-md px-10 py-5 rounded uppercase tracking-widest hover:bg-primary/10 transition-all">View Events</button>
+</div>
+</div>
+</section>
+<!-- 2. Concept Pillars -->
+<section class="py-32 max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="glass-card p-12 ambient-glow flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary text-5xl mb-6">restaurant</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Eat</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">From street-food legends to Michelin-calibre pop-ups, our food hall is a curated tapestry of London's finest culinary talent.</p>
+</div>
+<div class="glass-card p-12 ambient-glow flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary text-5xl mb-6">local_bar</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Drink</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">Precision cocktails, rare vintages, and a rotation of local craft brews served in an atmosphere of refined elegance.</p>
+</div>
+<div class="glass-card p-12 ambient-glow flex flex-col items-center text-center group hover:-translate-y-2 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary text-5xl mb-6">groups</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Gather</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">Flexible spaces for intimate workshops, late-night DJ sets, or large-scale corporate takeovers in the heart of the city.</p>
+</div>
+</div>
+</section>
+<!-- 3. Food Hall: Vendor Grid -->
+<section class="py-32 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="mb-16">
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-[0.2em]">Curated Partners</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">The Food Hall</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Chick N Sours -->
+<div class="relative group overflow-hidden rounded">
+<img class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close up of gourmet fried chicken with vibrant seasonings and artisanal sauces, presented in a high-end restaurant setting with dark, moody lighting and gold accents. The food photography is crisp and professional, emphasizing textures and vibrant colors against a deep black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIWyldDyzN3npBZHzQOv2t6Op-nljh0BHNbFau4CGy4eARuWeLrhWMAD7KDHKEE1Gp-Njnh6og_FAEaCmQrzlGh9ZBT-8jBsGeTdid9s0rSJg8EZEf-aAvA2KOnY_8QEs7lWINv9UnnrFRcHmj8TS1MNKZEx0Gy7A_JrOqzr4QV0WnYTAgOcJpeEp6qs0lT1FJH1OE0oUkMBT10w_DB4Mv9IYMiS800O4sYbcuk9XiTtxlEce02esGu2oeBvO3oHajDxbEiAStuxmY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80"></div>
+<div class="absolute bottom-0 p-8">
+<h4 class="font-headline-md text-headline-md text-primary">Chick N Sours</h4>
+<p class="font-label-md text-label-md text-muted-silver mt-2">Fried Chicken &amp; Sour Cocktails</p>
+</div>
+</div>
+<!-- Cafe by Sireli -->
+<div class="relative group overflow-hidden rounded">
+<img class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A beautifully crafted latte in a designer ceramic cup sitting on a dark marble countertop. The lighting is low-key and dramatic, with a single beam of light highlighting the steam and the intricate latte art. The overall aesthetic is premium, minimalist, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJqyGmuXASharMbV9G44sn8D32pZV1yYsAEghtRInO3HLdHpK8LwbywjfPK0ffr3SAkTjnrsnXTw35ssb_l8HGjDl3_j1bE2WrlFhxQQ7J_V1rUI2CsweEZBK2ML7aFeGctaZhH2ARaGDjXEOqRAn_KoUb83hMBXrF4zBVULm8uUEEZqViLx543IPbr8NuCg91N_iGXj3SG6dBwca5l2D8kMrBrDR_1xtKgvOcapRznlUEBolAR4kazFrBjaCeOQqb-oUlKbNgXvnq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80"></div>
+<div class="absolute bottom-0 p-8">
+<h4 class="font-headline-md text-headline-md text-primary">Cafe by Sireli</h4>
+<p class="font-label-md text-label-md text-muted-silver mt-2">Levantine-inspired brunch</p>
+</div>
+</div>
+<!-- Guest Vendor -->
+<div class="relative group overflow-hidden rounded">
+<img class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A platter of high-end fusion sushi presented on a dark slate board. The scene is illuminated with warm, amber lighting that catches the glint of gold-leaf garnishes. The atmosphere is that of an exclusive London lounge, emphasizing luxury and culinary artistry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvW-UjnlZOXzD484iFk86mW5g6FmKxfX9c0yOh2n9JiZIQA83hqXVjsIlXDSqA6qURu0TtdFLohnZBtjliwTKpmoNddzR5T9Ipxne1ebtLOV_HF_5psLK7TI2TQu_KO08yZoEVh5i57Kg0SO8HIliDJKEyWqaG9XSPBW7im5RdZ_EIPFHcNRuLy9HKHwyyFq3tofGg_DAapBuHSNlbAZkBF2TCojnmGTNZeLYxmauYHoRlShxtJdz42M1v6tM70QK4np7poiFiAvJu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80"></div>
+<div class="absolute bottom-0 p-8">
+<h4 class="font-headline-md text-headline-md text-primary">Izakaya Corner</h4>
+<p class="font-label-md text-label-md text-muted-silver mt-2">Experimental Japanese Tapas</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Upcoming Events: Horizontal Scroll -->
+<section class="py-32 overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop mb-12 flex justify-between items-end">
+<div>
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-[0.2em]">What's On</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">Experiences</h2>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 border border-gold-glass-stroke flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="w-12 h-12 border border-gold-glass-stroke flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="flex gap-gutter px-margin-desktop overflow-x-auto hide-scrollbar pb-10">
+<!-- Event 1 -->
+<div class="min-w-[400px] glass-card p-6 flex flex-col group">
+<div class="overflow-hidden rounded mb-6">
+<img class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A high-energy live music performance in a dimly lit, atmospheric venue. Silhouettes of musicians are backlit by warm golden stage lights, creating a sense of intimacy and premium production. The mood is sophisticated yet vibrant, typical of an exclusive London evening event." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmRknPwCelEwv2wHmgVO_9D0wgBFgVQv1JlIE-dURWlSEH3mBkovASHsa6m5ODEOKW9UD201ytmtd_CODC8ujwWawGm3Qi5IyzLu_eB7na6yzEppgTG4ISaekHe0RrI7we7EbjB5vwGAaPzqk9QFkOpPQSgmC2Z5ZLSsQ0uxeYc2ljKpib4JDhXy9DtqlEKvFLctf6Q9sG_c22X7-X3W7OKC2eLKYcPKCJ8draEbqxKVpIB9MYekZggu6iT1LgL43RZJeOCmf35tYH"/>
+</div>
+<span class="font-label-sm text-label-sm text-primary mb-2">FRI 24 MAY â¢ 20:00</span>
+<h4 class="font-headline-md text-headline-md mb-4 text-on-surface">Late Night Jazz Sessions</h4>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">Experience the smooth sounds of the Blue Corner Quartet in our intimate lounge.</p>
+<button class="mt-auto border-b border-primary self-start text-primary font-label-md text-label-md pb-1">Get Tickets</button>
+</div>
+<!-- Event 2 -->
+<div class="min-w-[400px] glass-card p-6 flex flex-col group">
+<div class="overflow-hidden rounded mb-6">
+<img class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700" data-alt="An elegant wine tasting workshop with crystal glasses arranged on a dark oak table. Soft, warm candlelight flickers in the background, creating a mood of exclusive refinement. The setting is a minimalist, high-end venue with artisanal details and deep tonal textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqw4s2M33ufIRgur9n5HpBR1MZvwwF9vUCtsIZoKmkDcS_V4Ka9i1O8o1HIP81pVADgzZwLYs35xb-IuV9EU8-fqnZPn5ltSiwfdejzGt1XOLEUCuGCAA_NIIMNDzQ3s_0obn2hzR7nAh1ruYsQpaqnDI9Tdb_1-37t-0z9fqcFhZ8_d48JgW2DU_ams_Z6QGhThzqlGqF1decCL6-tQpOUOXgl5qpT5s5P5EKx33HxDyhTjQaGiMGzXNkUADx6qlyc3fDIVrESlx4"/>
+</div>
+<span class="font-label-sm text-label-sm text-primary mb-2">SAT 25 MAY â¢ 14:00</span>
+<h4 class="font-headline-md text-headline-md mb-4 text-on-surface">Natural Wine Workshop</h4>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">A curated journey through European low-intervention vineyards with sommelier Luca Rossi.</p>
+<button class="mt-auto border-b border-primary self-start text-primary font-label-md text-label-md pb-1">Reserve Spot</button>
+</div>
+<!-- Event 3 -->
+<div class="min-w-[400px] glass-card p-6 flex flex-col group">
+<div class="overflow-hidden rounded mb-6">
+<img class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A gourmet cooking class led by a professional chef in a modern, dark-themed kitchen. Stainless steel surfaces catch the warm overhead lighting, and fresh, vibrant ingredients are laid out in a clean, minimalist fashion. The vibe is educational yet luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPc8F_Wcjhi7HwAj-Ze_hCgIHPuXANMIz6w-X-JfYThlVwYvAaCjBNkmFxYYspOo0xPNDaCUUsZE0tCVagQXBY_74iHVOzc4euk6xB9IXbyLZR1MlaCRDFz3dYFjLdy0Tey9CFHBzOih1TRMcwtJzX-1FYFeLDortfagffkeH82z4GA7vnya7cl0NhJfjU-KrJzHJt3k6PRgUCOzUX28Md3w41mHEku_sU-jA7BQLYAoOR_SzQjYyPP9H4SwxsQiae0ECcEwiz_eKF"/>
+</div>
+<span class="font-label-sm text-label-sm text-primary mb-2">SUN 26 MAY â¢ 11:00</span>
+<h4 class="font-headline-md text-headline-md mb-4 text-on-surface">The Art of Fermentation</h4>
+<p class="text-on-surface-variant font-body-md text-body-md mb-6">Master the secrets of artisanal kimchi and kombucha in our sustainable kitchen workshop.</p>
+<button class="mt-auto border-b border-primary self-start text-primary font-label-md text-label-md pb-1">Register</button>
+</div>
+</div>
+</section>
+<!-- 5. Venue Showcase -->
+<section class="relative py-48 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A sprawling, architecturally stunning multi-space venue in London with high ceilings, exposed industrial elements, and warm, atmospheric lighting. The space is filled with a mix of communal tables and private booths, all crafted from premium materials. The overall feel is one of vast scale combined with intimate warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAow_UDkwLlqnccyTINzY77L4w7Hv1jBnX9z7mpfUiLJaKkNIXlNkiWKo-QJ98w1paWy1Nxbo7F42eGmOaXb-sYyMy5sNRWyDkQe9wBqAB-OhaNxOS_JXocyeTlSlMjaltR_M5jTmLPpo99RrlQtbcS6Q2-cdy3qi6uiUtqxwUqsaODBCAy_BsZ5LkR9a8niu8J44WGB6y_2VoBFbItzAQaaWnjF-oa5oR9fVGxAhWjTD3CZLqW8-w4a86e113-FUy_8HxY-XLmrQrL"/>
+<div class="absolute inset-0 bg-background/70 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop text-center">
+<h2 class="font-display-lg text-display-lg text-primary mb-8">The Space for Anything</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mb-12">
+                Spanning over 20,000 sq ft of industrially-refined design, Corner Corner offers the ultimate canvas for your next event, from intimate dinners to 500-person gatherings.
+            </p>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-12 py-5 rounded-lg hover:shadow-2xl transition-all">Book Private Hire</button>
+</div>
+</section>
+<!-- 6. Testimonials -->
+<section class="py-32">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="space-y-12">
+<blockquote class="relative">
+<span class="material-symbols-outlined text-primary text-6xl absolute -top-8 -left-8 opacity-20">format_quote</span>
+<p class="font-headline-md text-headline-md italic text-on-surface leading-relaxed">
+                        "Corner Corner represents the future of London's hospitalityâa seamless blend of high-end gastronomy and true communal spirit."
+                    </p>
+<cite class="block mt-6 font-label-md text-label-md text-primary not-italic">â Broadwick Live</cite>
+</blockquote>
+<blockquote class="relative">
+<span class="material-symbols-outlined text-primary text-6xl absolute -top-8 -left-8 opacity-20">format_quote</span>
+<p class="font-headline-md text-headline-md italic text-on-surface leading-relaxed">
+                        "The curation here is unmatched. They've created a platform where artisanal vendors can truly thrive in a world-class setting."
+                    </p>
+<cite class="block mt-6 font-label-md text-label-md text-primary not-italic">â KERB</cite>
+</blockquote>
+</div>
+<div class="relative">
+<div class="glass-card p-4 aspect-[4/5] relative z-10">
+<img class="w-full h-full object-cover rounded" data-alt="A candid, high-style photograph of guests laughing and talking in a sophisticated, dimly lit lounge environment. The image uses a shallow depth of field, with warm golden light bokeh in the background. The aesthetic is chic, authentic, and captures the exclusive social atmosphere of a top-tier London venue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXwzLyiCTTXt2nxuKAt1ajJ_mV4XfMYhE6A3Euu7xBc9giALkACLwkuSFMo9Golect2gWtUKf2SIOK8CU6YP3UTjaA0uSUmrlzdNs20av2DxCbZUt3GdiCGO7dg-4Zd1EXqd7fXoDWwMgCiC-I3WeFVN9S3MDGG9R2rZkcf2udxmrcBmJcQ0v2G9F6tpI95bSCgeqGI5SQgBwc16eOJQfYFlT10pmiIipCE87EXrhE-JEwEC05qwsb36-ncDoa5gb2NMzp-4iThDd-"/>
+</div>
+<div class="absolute -bottom-10 -right-10 w-64 h-64 border-2 border-primary/20 -z-10"></div>
+</div>
+</div>
+</section>
+<!-- 7. Location (Dark Map) -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-gutter items-stretch">
+<div class="flex flex-col justify-center p-12 glass-card">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Find Us</h2>
+<div class="space-y-8">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface uppercase mb-1">Address</h5>
+<p class="text-on-surface-variant font-body-md text-body-md">123 Corner Lane, London E1 6QL</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface uppercase mb-1">Hours</h5>
+<p class="text-on-surface-variant font-body-md text-body-md">Mon-Thu: 08:00 â 23:00<br/>Fri-Sat: 08:00 â 01:00<br/>Sun: 09:00 â 22:00</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface uppercase mb-1">Contact</h5>
+<p class="text-on-surface-variant font-body-md text-body-md">hello@cornercorner.co.uk<br/>+44 20 7123 4567</p>
+</div>
+</div>
+</div>
+</div>
+<div class="min-h-[500px] relative overflow-hidden rounded shadow-2xl">
+<!-- Dark map representation -->
+<div class="absolute inset-0 bg-[#242424]" data-location="London">
+<iframe allowfullscreen="" class="w-full h-full grayscale invert-[0.9] contrast-[1.2] opacity-80" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.905021245037!2d-0.07689108422969!3d51.52414167963749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761cb64402684d%3A0x7d022839219c629e!2sShoreditch!5e0!3m2!1sen!2suk!4v1625656565656!5m2!1sen!2suk" style="border:0;">
+</iframe>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. CTA Section -->
+<section class="py-40 text-center">
+<div class="max-w-2xl mx-auto px-margin-mobile">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Ready to Visit?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">Join us for an evening of artisanal discovery. Tables fill up quicklyâreserve yours today.</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-12 py-5 rounded uppercase tracking-widest active:scale-95 duration-200">Book Now</button>
+<button class="text-primary font-label-md text-label-md px-12 py-5 rounded uppercase tracking-widest border border-gold-glass-stroke hover:bg-white/5 transition-all">Sign up for Newsletter</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-gold-glass-stroke py-20">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-primary mb-6">Corner Corner</div>
+<p class="text-muted-silver font-body-md text-body-md mb-8">Crafting experiences, fostering community, and redefining the urban social landscape in the heart of London.</p>
+<div class="flex gap-4">
+<a class="text-muted-silver hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-muted-silver hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">camera</span></a>
+<a class="text-muted-silver hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h5 class="text-on-surface font-label-md text-label-md mb-8 uppercase tracking-widest">Navigation</h5>
+<ul class="space-y-4">
+<li><a class="text-muted-silver hover:text-primary transition-colors font-body-md text-body-md" href="#">What's On</a></li>
+<li><a class="text-muted-silver hover:text-primary transition-colors font-body-md text-body-md" href="#">Venue Hire</a></li>
+<li><a class="text-muted-silver hover:text-primary transition-colors font-body-md text-body-md" href="#">The Farm</a></li>
+<li><a class="text-muted-silver hover:text-primary transition-colors font-body-md text-body-md" href="#">Experiences</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-on-surface font-label-md text-label-md mb-8 uppercase tracking-widest">Legal</h5>
+<ul class="space-y-4">
+<li><a class="text-muted-silver hover:text-primary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-muted-silver hover:text-primary transition-colors font-body-md text-body-md" href="#">Terms of Service</a></li>
+<li><a class="text-muted-silver hover:text-primary transition-colors font-body-md text-body-md" href="#">Accessibility</a></li>
+<li><a class="text-muted-silver hover:text-primary transition-colors font-body-md text-body-md" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-on-surface font-label-md text-label-md mb-8 uppercase tracking-widest">Join the Club</h5>
+<p class="text-muted-silver font-body-md text-body-md mb-6">Receive exclusive event invites and curator updates.</p>
+<form class="flex flex-col gap-4">
+<input class="bg-surface-container-high border border-outline-variant text-on-surface px-4 py-3 rounded focus:border-primary focus:ring-0 transition-colors" placeholder="Email Address" type="email"/>
+<button class="bg-primary text-on-primary font-label-md text-label-md py-3 rounded hover:brightness-110 transition-all">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 pt-8 border-t border-gold-glass-stroke flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-muted-silver font-label-md text-label-md">Â© 2024 Corner Corner London. All Rights Reserved.</p>
+<div class="flex gap-8">
+<a class="text-muted-silver hover:text-primary transition-colors font-label-md text-label-md" href="#">Contact Us</a>
+<a class="text-muted-silver hover:text-primary transition-colors font-label-md text-label-md" href="#">Newsletter</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and simple effects
+        document.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-2xl');
+                nav.classList.remove('bg-background/80');
+                nav.classList.add('bg-background');
+            } else {
+                nav.classList.remove('shadow-2xl');
+                nav.classList.add('bg-background/80');
+                nav.classList.remove('bg-background');
+            }
+        });
+    </script>
+</body>
+</html>

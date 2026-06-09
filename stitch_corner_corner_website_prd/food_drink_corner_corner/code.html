@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Food &amp; Drink | Corner Corner London</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#2a2a2a",
+                    "secondary-fixed": "#ffdea7",
+                    "inverse-on-surface": "#313030",
+                    "on-secondary-fixed": "#271900",
+                    "on-tertiary": "#203051",
+                    "on-tertiary-fixed-variant": "#374669",
+                    "secondary-container": "#5d4515",
+                    "on-surface": "#e5e2e1",
+                    "tertiary-container": "#9dadd5",
+                    "surface-bright": "#3a3939",
+                    "secondary-fixed-dim": "#e4c286",
+                    "on-secondary": "#412d00",
+                    "surface": "#131313",
+                    "surface-container-low": "#1c1b1b",
+                    "muted-silver": "#b8b0a8",
+                    "inverse-surface": "#e5e2e1",
+                    "tertiary-fixed": "#d8e2ff",
+                    "on-background": "#e5e2e1",
+                    "on-secondary-container": "#d5b479",
+                    "secondary": "#e4c286",
+                    "outline-variant": "#4d463a",
+                    "on-primary": "#412d00",
+                    "error-container": "#93000a",
+                    "primary-container": "#c9a96e",
+                    "on-tertiary-container": "#314163",
+                    "on-primary-fixed": "#261900",
+                    "on-surface-variant": "#d0c5b5",
+                    "background": "#131313",
+                    "surface-dim": "#131313",
+                    "primary-fixed": "#ffdea4",
+                    "off-white": "#f5f0eb",
+                    "primary": "#e6c487",
+                    "surface-container": "#201f1f",
+                    "tertiary": "#b8c8f2",
+                    "primary-fixed-dim": "#e4c285",
+                    "deep-gray": "#1c1c1c",
+                    "gold-glass-stroke": "rgba(201, 169, 110, 0.1)",
+                    "on-primary-container": "#543d0c",
+                    "surface-tint": "#e4c285",
+                    "on-primary-fixed-variant": "#5a4312",
+                    "on-secondary-fixed-variant": "#5a4313",
+                    "on-error-container": "#ffdad6",
+                    "outline": "#998f81",
+                    "inverse-primary": "#745a27",
+                    "on-tertiary-fixed": "#081b3b",
+                    "surface-container-lowest": "#0e0e0e",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#b6c6ef",
+                    "surface-container-highest": "#353534",
+                    "surface-variant": "#353534",
+                    "on-error": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Noto Serif"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Noto Serif"],
+                    "headline-lg-mobile": ["Noto Serif"],
+                    "headline-md": ["Noto Serif"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png"); /* Subtle grain texture placeholder */
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(19, 19, 19, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(201, 169, 110, 0.1);
+        }
+        .ambient-glow {
+            box-shadow: 0px 20px 40px rgba(0,0,0,0.5);
+        }
+        .vertical-divider {
+            width: 0.5px;
+            background-color: rgba(201, 169, 110, 0.2);
+        }
+        .horizontal-divider {
+            height: 0.5px;
+            background-color: rgba(201, 169, 110, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-gold-glass-stroke shadow-2xl">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20">
+<div class="font-headline-md text-headline-md text-primary tracking-tight font-bold">Corner Corner</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">What's On</a>
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Experiences</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">The Farm</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Venue Hire</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="hidden lg:block font-label-md text-label-md text-primary px-4 py-2 border border-primary/20 hover:bg-white/5 transition-all active:scale-95 duration-200">Inquiry</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2.5 font-bold hover:brightness-110 transition-all active:scale-95 duration-200">Book Now</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Section 1: PageHero -->
+<section class="relative h-[921px] flex items-end pb-32 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="London Street Food Scene" class="w-full h-full object-cover grayscale-[20%] brightness-50" data-alt="A cinematic, high-angle interior shot of a bustling London street food hall at dusk. Warm golden Edison bulbs hang from industrial ceilings, casting a soft glow over artisanal wooden counters and diverse crowds. The atmosphere is sophisticated and moody, with deep shadows and vibrant accents of prepared gourmet dishes. The visual style is premium dark, blending urban industrial textures with elegant glass and gold finishes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxveKFo1a3bQuuCVBi77Yr4lRkyFCRJOrRTIq1CaERyYXXTsqplCIPlynh6tkiaQ3juEQ8Myym6fvOX8ZJGATzOCxwOzsyt2vRYcFdddAzZvBnCmcdnYwJyNENSGTh105a-wbuQnXM7_OVyP0qOuKBFHHzluZLYo3NyNZbSaxUnsHB8sYcq5PT82XZJ9luMH3t8F51lp10_uJzB69L5aawwLHMqqU3euad3wQWH_u0lPlaqBDtIvgO-X_Q48pZ3iKSXICoyQkClKDB"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full">
+<div class="max-w-2xl space-y-6">
+<span class="inline-block text-primary font-label-sm tracking-widest uppercase border-b border-primary/30 pb-2">Culinary Excellence</span>
+<h1 class="font-display-lg text-display-lg text-off-white leading-tight">London's Best <br/><span class="italic text-primary">Street Food</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">A curated collection of London's most celebrated vendors, bringing global flavors to the heart of our communal space.</p>
+</div>
+</div>
+</section>
+<!-- Section 2: Vendor Directory -->
+<section class="py-32 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-off-white mb-4">The Residents</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">We partner with artisans who share our obsession with quality and provenance. From fried chicken legends to Levantine masters.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-primary font-label-md border border-gold-glass-stroke px-4 py-1.5 glass-panel">All Cuisines</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Vendor 1 -->
+<div class="glass-panel group cursor-pointer transition-all duration-500 hover:-translate-y-2">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A close-up shot of crispy, golden-brown fried chicken garnished with fresh herbs and colorful chili slices. The lighting is dramatic and focused, highlighting the crunchy texture and succulent meat. The background is a dark, moody kitchen environment with subtle hints of gold-finished utensils. The overall aesthetic is premium, indulgent, and artistically composed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcK8uQInsp6U4j9XATzkEO_NwZuLWLxeQlVlP2FO3eXxUZBmE2JD-z94fVZC40kA5pxrMf2yjF2usLri9lfazSi-IHwbF6tGNBMWeuO_IwMGgnLIgkmXGrMRayVRZ8MejnBEP26KezDgiayaPlN6xstWCG6NXW4Sacfj0afNAqolHiutN497PcyYZpz1bPP6YTLvY2a3qKx6ZrEPOv6Lm6aTHjC3jFPMvSXEOj01WMwFlKuNHq1OafmRQKKHNN3lQQ9y2z61o5Wn4e"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 text-on-primary text-[10px] font-bold px-2 py-1 tracking-widest uppercase">Popular</span>
+</div>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[24px] text-off-white">Chick N Sours</h3>
+<span class="material-symbols-outlined text-primary text-xl">arrow_outward</span>
+</div>
+<span class="font-label-sm text-primary tracking-widest uppercase">Fried Chicken &amp; Sours</span>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-2">Whimsical fried chicken sandwiches and herb-inspired cocktails that redefine comfort food.</p>
+</div>
+</div>
+<!-- Vendor 2 -->
+<div class="glass-panel group cursor-pointer transition-all duration-500 hover:-translate-y-2">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An elegant arrangement of Levantine small plates featuring vibrant hummus with olive oil, freshly baked flatbread, and roasted vegetables. The scene is lit with soft, side-lighting that emphasizes the rich textures and earthy colors of the ingredients. The setting is a minimalist, high-end cafe with dark stone surfaces and subtle gold accents, creating a sophisticated and inviting atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1C613iE9LTM7szsCIRh-gDqfmg98EIa3aojqmwEz9SFrqUNzR9MRjpQx0CeSW5yjo3T2xPd1951oTwngLGOwnjYNHYZStr6wPX0vo6s5fui7ahdTRq7nxL-DR2WwD8qhHTDSiArhGqsHg66seoInT0EP7loSXHC64Z259tUrZvY0ztRi5GSWMlC7bgsXaAsP9en0Vc-ENMJxtTGbbt8WRhjAj7t96BXMmVkXLAQVfpw19R1UWIqba9fboaQr6cvd8J2fL9rIQS5V6"/>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[24px] text-off-white">Cafe by Sireli</h3>
+<span class="material-symbols-outlined text-primary text-xl">arrow_outward</span>
+</div>
+<span class="font-label-sm text-primary tracking-widest uppercase">Levantine Kitchen</span>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-2">Authentic Armenian and Levantine flavors brought to life through family recipes and modern techniques.</p>
+</div>
+</div>
+<!-- Vendor 3 -->
+<div class="glass-panel group cursor-pointer transition-all duration-500 hover:-translate-y-2">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A masterfully prepared artisanal pizza with a perfectly charred crust, topped with fresh buffalo mozzarella and vibrant basil leaves. The lighting is moody and directional, casting shadows that define the rustic texture of the dough. The backdrop is a sleek, dark-toned contemporary eatery with hints of warm metal and polished surfaces, embodying a premium dining experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEScS0N99ppc6qNLS4MpQ1Oz7fY2XUeaPT8GzFHX9Cu5aJhASVht3anQW4v97nKypFwXHGkbOWxbf5_uI9pRlHAqd8t_dwJkntyFGdrN2bDIR50n_o2r1BMPa2bMQzyavpfKew664n-rH5QCoYzwtGZbRaEYPBBAW1PNwSpVd9n1PidS4meGvzUnLh7jMr7tFblC42HK0LzTg-OXlWipztgRiF9-FWogEzwdY7FNych9YoUb6FXM5KHoRSsfmu3oeK26BOnsNH7RnE"/>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[24px] text-off-white">Crust &amp; Craft</h3>
+<span class="material-symbols-outlined text-primary text-xl">arrow_outward</span>
+</div>
+<span class="font-label-sm text-primary tracking-widest uppercase">Artisanal Pizza</span>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-2">Slow-fermented dough topped with premium seasonal ingredients from independent producers.</p>
+</div>
+</div>
+<!-- Vendor 4 -->
+<div class="glass-panel group cursor-pointer transition-all duration-500 hover:-translate-y-2">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Modern Japanese street food featuring beautifully presented bao buns and grilled yakitori skewers. The food is arranged on a dark ceramic platter, highlighted by sharp, crisp lighting that brings out the vibrant colors of the garnishes. The setting is a dimly lit, high-end London lounge with a minimalist aesthetic and subtle golden reflections on glass surfaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4HDD4mtpHjF4KCQuvlMm07pv9rR_PpXjtr2emnS_qw8zJuBmEkYC11takbZgPOKBZi_Zh1dLxEsbd-ctp_sjPGvlgHfuhzgDVeRIHjVdnwr68MfaMQFpS-aUdygQM8wMUpjFeCFEuJzzxJBHxUedH5DHWnsJ56kD_hmKwrsp8nE-b9wgPuzzTUNZx_70n67NQC5gdKTRK-WQfw1zaACq3BACWG4MixEAMSPczXABFRrd13-yiys2eA-2DZRbrLkvLaLdFBPbuu0u1"/>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[24px] text-off-white">Nikkei Nosh</h3>
+<span class="material-symbols-outlined text-primary text-xl">arrow_outward</span>
+</div>
+<span class="font-label-sm text-primary tracking-widest uppercase">Japanese Fusion</span>
+<p class="font-body-md text-on-surface-variant text-sm line-clamp-2">An experimental fusion of Japanese technique and South American heat, focusing on sustainable seafood.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Bar Section -->
+<section class="py-40 bg-surface-container-lowest relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-30 pointer-events-none">
+
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 space-y-10 z-10">
+<div class="space-y-4">
+<span class="font-label-sm text-primary tracking-[0.3em] uppercase">The Libation Library</span>
+<h2 class="font-display-lg text-display-lg text-off-white">Crafted to <br/>Perfection</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">Our central bar is the heart of Corner Corner. Featuring a rotating selection of local craft beers, organic wines, and our signature cocktail menu inspired by London's botanical heritage.</p>
+<div class="grid grid-cols-2 gap-8 border-t border-gold-glass-stroke pt-10">
+<div class="space-y-2">
+<span class="text-primary font-headline-md">24</span>
+<p class="font-label-sm text-muted-silver tracking-widest uppercase">Taps on Rotation</p>
+</div>
+<div class="space-y-2">
+<span class="text-primary font-headline-md">15</span>
+<p class="font-label-sm text-muted-silver tracking-widest uppercase">House Cocktails</p>
+</div>
+</div>
+<div class="pt-6">
+<button class="px-8 py-4 border border-primary text-primary font-label-md hover:bg-primary/5 transition-colors">Download Bar Menu</button>
+</div>
+</div>
+<div class="lg:col-span-7 relative flex justify-end">
+<div class="w-4/5 aspect-square relative glass-panel p-4 ambient-glow rotate-2 hover:rotate-0 transition-transform duration-700">
+<img class="w-full h-full object-cover" data-alt="A sophisticated close-up of a craft cocktail being prepared at a dark, marble-topped bar. Shimmering liquid is poured into a delicate crystal glass, with droplets catching the light. The background is a warm, atmospheric lounge with soft amber lighting, rows of premium spirits on glass shelves, and a 1px gold border aesthetic. The mood is exclusive, elegant, and perfectly balanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD68GaNVhmjTMUbFFjSnat_cXmTIjt2uykMB4XG_BrjP-7WVheADacctvHzr069uPhIFfw9zB8cYRGOio2C3OSdKAinOBlIRyoPZApyT3eIPaVSLvgiMEn-2Xhu2nqb3Te9LmN9t3AsHS_d8wRyPV31i3e4lKnMg0Ptxxck1au7-PCUqcB1m-1yHrmyheFEwK7IFn3SBMWD0U3cqfQVUczpuqZLpoHFyvBViPz8PhshgZSEncLB6FjMuNZqLIn9KHAmf1o9RLb1fXP6"/>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-10 -left-10 w-48 h-48 border border-primary/20 -z-10 animate-pulse"></div>
+</div>
+</div>
+</section>
+<!-- Section 4: Opening Hours -->
+<section class="py-32 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg text-off-white mb-4">Opening Hours</h2>
+<p class="font-body-md text-on-surface-variant max-w-lg mx-auto">Plan your visit across our different spaces. Please note last food orders are 45 minutes before close.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Food Hall Schedule -->
+<div class="glass-panel p-10 space-y-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">restaurant</span>
+<h3 class="font-headline-md text-off-white">The Food Hall</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-4 border-b border-gold-glass-stroke">
+<span class="font-label-md text-on-surface-variant">Mon – Thu</span>
+<span class="font-body-md text-primary">11:00 – 22:00</span>
+</div>
+<div class="flex justify-between items-center pb-4 border-b border-gold-glass-stroke">
+<span class="font-label-md text-on-surface-variant">Fri – Sat</span>
+<span class="font-body-md text-primary">11:00 – 23:30</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-md text-on-surface-variant">Sunday</span>
+<span class="font-body-md text-primary">12:00 – 21:00</span>
+</div>
+</div>
+</div>
+<!-- Bar Schedule -->
+<div class="glass-panel p-10 space-y-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">local_bar</span>
+<h3 class="font-headline-md text-off-white">The Central Bar</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-4 border-b border-gold-glass-stroke">
+<span class="font-label-md text-on-surface-variant">Mon – Thu</span>
+<span class="font-body-md text-primary">11:00 – 00:00</span>
+</div>
+<div class="flex justify-between items-center pb-4 border-b border-gold-glass-stroke">
+<span class="font-label-md text-on-surface-variant">Fri – Sat</span>
+<span class="font-body-md text-primary">11:00 – 01:30</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-md text-on-surface-variant">Sunday</span>
+<span class="font-body-md text-primary">12:00 – 22:30</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: CTA -->
+<section class="py-40">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="glass-panel relative overflow-hidden p-20 text-center space-y-8 ambient-glow">
+<div class="absolute inset-0 z-0 opacity-20">
+<img class="w-full h-full object-cover" data-alt="An expansive view of an empty but elegantly set dining hall at night. Polished wood tables, velvet-seated chairs, and flickering candlelight create a sense of expectant luxury. The lighting is low-key and dramatic, with the primary light source coming from glowing gold fixtures. The atmosphere is quiet, refined, and deeply atmospheric, evoking a premium dining destination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL31Y86zJj1aZImHSaZSe39vt8pniyTMi07FY-TW-rrBRxvce2wUtEZKGAE_nxBRIM4JfFPp5W1G-63DezNIixlphY7S77bziCv-_tv4dL7Ubv0ut4I62JFpB_RT25CKliw1RWupcwE3mVMU0wECNCI9pN_sw74UwIRAbmtMro4ciq7roF6ytkX_WwP6HTB_Ftjn5wqiuN76n4oG4NQOH-p5IiiMx1csnjkoMrlyTewqSjj2bQPQATZ403Cg8b1xxzk0n-zoe1jLlO"/>
+</div>
+<div class="relative z-10 space-y-8">
+<h2 class="font-display-lg text-display-lg text-off-white">Ready for a taste?</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Join us for an unforgettable culinary journey. We recommend booking for groups of 6 or more to ensure space in the main hall.</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+<button class="bg-primary text-on-primary font-label-md px-12 py-5 font-bold hover:brightness-110 transition-all active:scale-95 duration-200">Reserve a Table</button>
+<button class="border border-primary text-primary font-label-md px-12 py-5 hover:bg-primary/5 transition-all active:scale-95 duration-200">View Gallery</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-20 border-t border-gold-glass-stroke">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="space-y-6">
+<div class="font-headline-md text-headline-md text-primary">Corner Corner</div>
+<p class="font-body-md text-muted-silver text-sm">A multi-space venue in the heart of London, dedicated to artisanal food, craft drinks, and curated culture.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-gold-glass-stroke flex items-center justify-center text-primary hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 border border-gold-glass-stroke flex items-center justify-center text-primary hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-primary tracking-widest uppercase">Quick Links</h4>
+<div class="flex flex-col gap-3">
+<a class="font-label-md text-muted-silver hover:text-primary transition-colors" href="#">Newsletter</a>
+<a class="font-label-md text-muted-silver hover:text-primary transition-colors" href="#">Careers</a>
+<a class="font-label-md text-muted-silver hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-primary tracking-widest uppercase">Legal</h4>
+<div class="flex flex-col gap-3">
+<a class="font-label-md text-muted-silver hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-muted-silver hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-muted-silver hover:text-primary transition-colors" href="#">Accessibility</a>
+</div>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-primary tracking-widest uppercase">Location</h4>
+<p class="font-body-md text-muted-silver text-sm">
+                    123 Curtain Road,<br/>
+                    Shoreditch, London<br/>
+                    EC2A 3AA
+                </p>
+<a class="inline-flex items-center gap-2 text-primary font-label-md hover:underline" href="#">
+                    Get Directions
+                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 pt-8 border-t border-gold-glass-stroke/50 flex justify-between items-center flex-wrap gap-4">
+<p class="font-label-sm text-muted-silver">© 2024 Corner Corner London. All Rights Reserved.</p>
+<p class="font-label-sm text-muted-silver">Crafted with precision.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions for scrolling
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section > div').forEach(el => {
+                el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>

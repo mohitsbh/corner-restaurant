@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Events | Corner Corner London</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>body {
+    background-color: #131313;
+    color: #e5e2e1;
+    overflow-x: hidden
+    }
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDbYRwEi5vh2r53GsWce9qItIFjtu8g29p4mE99T50t8j4D5vNvWv3bZyk2S-oDDhv0LiBjODfBu6O17UxeiRJ34nnqznfvc2-zWiiqiZtORbK76PfUFEp_p8epdHeV4NchHtrYIwsDNf09EqjORL3YNppjDqmYnt5w4D0ZkTS9S19-6RAmR-R0tGlGOPFdRYz1oyDUwVnrgKNztJcFxdZBg7U2bnqVIKAGTQbzXLTqjtKhqIcruRZ9Et-s-cEPhQdot3CwBChxIowF)
+    }
+.glass-panel {
+    background: rgba(19, 19, 19, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(201, 169, 110, 0.1)
+    }
+.ambient-glow {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5)
+    }
+.gold-divider {
+    height: 0.5px;
+    background: rgba(201, 169, 110, 0.3);
+    width: 100%
+    }</style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#2a2a2a",
+                      "secondary-fixed": "#ffdea7",
+                      "inverse-on-surface": "#313030",
+                      "on-secondary-fixed": "#271900",
+                      "on-tertiary": "#203051",
+                      "on-tertiary-fixed-variant": "#374669",
+                      "secondary-container": "#5d4515",
+                      "on-surface": "#e5e2e1",
+                      "tertiary-container": "#9dadd5",
+                      "surface-bright": "#3a3939",
+                      "secondary-fixed-dim": "#e4c286",
+                      "on-secondary": "#412d00",
+                      "surface": "#131313",
+                      "surface-container-low": "#1c1b1b",
+                      "muted-silver": "#b8b0a8",
+                      "inverse-surface": "#e5e2e1",
+                      "tertiary-fixed": "#d8e2ff",
+                      "on-background": "#e5e2e1",
+                      "on-secondary-container": "#d5b479",
+                      "secondary": "#e4c286",
+                      "outline-variant": "#4d463a",
+                      "on-primary": "#412d00",
+                      "error-container": "#93000a",
+                      "primary-container": "#c9a96e",
+                      "on-tertiary-container": "#314163",
+                      "on-primary-fixed": "#261900",
+                      "on-surface-variant": "#d0c5b5",
+                      "background": "#131313",
+                      "surface-dim": "#131313",
+                      "primary-fixed": "#ffdea4",
+                      "off-white": "#f5f0eb",
+                      "primary": "#e6c487",
+                      "surface-container": "#201f1f",
+                      "tertiary": "#b8c8f2",
+                      "primary-fixed-dim": "#e4c285",
+                      "deep-gray": "#1c1c1c",
+                      "gold-glass-stroke": "rgba(201, 169, 110, 0.1)",
+                      "on-primary-container": "#543d0c",
+                      "surface-tint": "#e4c285",
+                      "on-primary-fixed-variant": "#5a4312",
+                      "on-secondary-fixed-variant": "#5a4313",
+                      "on-error-container": "#ffdad6",
+                      "outline": "#998f81",
+                      "inverse-primary": "#745a27",
+                      "on-tertiary-fixed": "#081b3b",
+                      "surface-container-lowest": "#0e0e0e",
+                      "error": "#ffb4ab",
+                      "tertiary-fixed-dim": "#b6c6ef",
+                      "surface-container-highest": "#353534",
+                      "surface-variant": "#353534",
+                      "on-error": "#690005"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "base": "8px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Noto Serif"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "display-lg": ["Noto Serif"],
+                      "headline-lg-mobile": ["Noto Serif"],
+                      "headline-md": ["Noto Serif"],
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                      "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="font-body-md text-body-md">
+<div class="grain-overlay"></div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-gold-glass-stroke shadow-2xl h-20">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-full">
+<a class="font-headline-md text-headline-md text-primary tracking-tight" href="#">Corner Corner</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">What's On</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Venue Hire</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">The Farm</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Experiences</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block font-label-md text-label-md text-secondary border border-gold-glass-stroke px-6 py-2 hover:bg-white/5 transition-all">Inquiry</button>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-label-md text-label-md active:scale-95 duration-200">Book Now</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Section 1: PageHero -->
+<header class="relative h-[819px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover grayscale opacity-50" data-alt="A high-contrast cinematic shot of a vibrant London nightclub crowd, captured with motion blur and atmospheric stage lighting. Golden light streaks and deep shadows define the sophisticated party atmosphere, while a DJ silhouette is visible in the background. The aesthetic is premium dark, emphasizing a sense of exclusivity and energetic communal warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4VmuJewCB7m5C8ks0FRSdADkJQXRUIqicJwcOjGyp-kKr0hgHSZVPMGV5DGlgYK3rRraWHvZOy_ncjiGqGNtn8Okn96AraXeFj66Bq_kokiJNh9wcT5Uwc1HPiXikeMIiA3Bs0iSsLc-7P63T3TbUq7R44ooBdzCQWvF6yKvSS7Hdpj9LrXf6s92YfyXj5adOSP8EjoCv2ymC_p0fAe_T-sv0_KpIke5nUzDQgufutsYl2f5ja1T4kp_P348-oWN_7Bz3bWEHbqmp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full">
+<div class="max-w-2xl">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em] mb-4 block">Cultural Calendar</span>
+<h1 class="font-display-lg text-display-lg text-off-white mb-6 leading-none">Curated Experiences at Corner Corner.</h1>
+<p class="font-body-lg text-body-lg text-muted-silver mb-8">From intimate acoustic sessions to high-energy match days, our programmed events bridge the gap between community warmth and elite programming.</p>
+</div>
+</div>
+</header>
+<!-- Section 2: Upcoming Events (Bento Grid) -->
+<section class="py-32 bg-background">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-off-white mb-4">Upcoming Events</h2>
+<p class="text-muted-silver max-w-md">Our hand-picked selection of primary cultural moments happening across the venue this month.</p>
+</div>
+<div class="flex gap-4">
+<button class="p-4 border border-gold-glass-stroke text-primary hover:bg-white/5 transition-all"><span class="material-symbols-outlined">west</span></button>
+<button class="p-4 border border-gold-glass-stroke text-primary hover:bg-white/5 transition-all"><span class="material-symbols-outlined">east</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Featured Card (Music) -->
+<div class="md:col-span-8 group relative aspect-[16/9] overflow-hidden glass-panel ambient-glow">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="A close-up shot of a vintage mahogany electric guitar on a dimly lit stage, illuminated by a single warm golden spotlight. Subtle smoke swirls in the background, creating a moody, intimate jazz lounge atmosphere. The lighting is low-key, highlighting the wood grain and metallic hardware of the instrument, evoking premium acoustic elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJjWsg2WoRU04PRp-i52MPWoIK79RhzUgh0TvSuJya1CxB4tJHokUI1Rnl47qWC7ohO4J3RF2TJp9EiPm4MtIHaIamAU6QsHXjTMHc-l-txflwHTC2W_5dG1YePifGA-9VeUDmKklC0wUB9aJkVrKhfUeeVUQ0W3NRacqlyf-b2HwoG4DcOh4EVnYeQVf-z_7mjIFQ9MEKqikKXGAoRDUSzRx0MtNA7tR1aAiE3HS9iqPdUuVXwpZRjNXkWYS4P0IkW1RdHjC0d6BZ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="inline-block px-3 py-1 border border-primary/30 text-primary font-label-sm text-label-sm uppercase mb-4">Live Music</span>
+<h3 class="font-headline-md text-headline-md text-off-white mb-2">Corner Sessions: The Blue Note Trio</h3>
+<p class="text-muted-silver mb-6">Saturday, 24th Oct • 8:00 PM</p>
+<button class="bg-primary text-background px-8 py-3 font-label-md text-label-md hover:brightness-110 transition-all">Get Tickets</button>
+</div>
+</div>
+<!-- World Cup Card -->
+<div class="md:col-span-4 group relative overflow-hidden glass-panel ambient-glow">
+<div class="p-8 h-full flex flex-col">
+<img class="w-full h-48 object-cover mb-6 grayscale hover:grayscale-0 transition-all duration-500" data-alt="An expansive view of a modern football stadium under dramatic evening lighting, with beams of white and gold light cutting through the night sky. The grass is a deep, rich green, and the atmosphere feels electric and vast. The image captures the grandeur and excitement of a high-stakes sporting event in a premium urban setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TGey23j1M4OkpqCmSFsDcTPn_MWR3pi2hSLjd3hUEqDIzE02hJhJRTvqz-YDnLbBX3oTW9kxZnhAJkhRB8PeOKZ6EgswbwkkXXUtd6EXs9wbEKnNDLOIPmWa1UzvnZaN7DTEhvZ0CzDuQsBfFchPhe_3VKRuTHFzfOeDlbOcF_-R6nm7jaAQvgqZskvKZC2ZuJPn9ko99NL67vrQtJoNL3bS5b48K3zmfDSz-Qq2Y0gGIIuNCAXTrXu_Mf2KFHUBl_XH69cBuaAv"/>
+<span class="inline-block font-label-sm text-label-sm text-primary mb-2">Screening</span>
+<h3 class="font-headline-md text-headline-md text-off-white mb-4">World Cup Finals: Live from The Yard</h3>
+<p class="text-muted-silver mb-auto">The biggest screen in East London. Full bar service and artisanal snacks.</p>
+<div class="pt-6 mt-6 border-t border-gold-glass-stroke">
+<a class="text-primary font-label-md flex items-center gap-2 group" href="#">Reserve a Table <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span></a>
+</div>
+</div>
+</div>
+<!-- Workshop Card -->
+<div class="md:col-span-4 group relative overflow-hidden glass-panel">
+<div class="p-8">
+<img class="w-full h-48 object-cover mb-6 grayscale hover:grayscale-0 transition-all duration-500" data-alt="A focused workshop setting showing hands working with artisanal clay on a rustic wooden table. Warm, natural sunlight streams from a window, illuminating the texture of the earth and the craftsperson's tools. The scene is calm, tactile, and minimalist, emphasizing the beauty of slow-made products and heritage skills." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfk1D5oulxR2LbcB2k9QMPESpTTkHUEC1oirYnkCAmkrKjBSP5-L273YluQg_IrPJ1-_q1105lZ7z_QFpKwisYXBiMhNOwXQm2sMC2UpekFJeVHThbv8am0fWEeBdPghFrkkq4mVbfr4v7yD9uC6SM1MCNizCw_AZ6EdVZ-aAHguBxdFE86YxgA3BlHISypFKwcuRBnmsH8gW_lYdEhk6-lKzoThlUKk5l2N1SZuADHKNhGmgN1cE8h3bU-N5_20xoLosCCxEDGgZV"/>
+<h3 class="font-headline-md text-headline-md text-off-white mb-2">Pottery &amp; Pints</h3>
+<p class="text-muted-silver">Sunday, 25th Oct • 11:00 AM</p>
+</div>
+</div>
+<!-- Exhibition Card -->
+<div class="md:col-span-8 group relative overflow-hidden glass-panel flex flex-col md:flex-row">
+<div class="md:w-1/2 overflow-hidden">
+<img class="w-full h-full object-cover grayscale opacity-70 group-hover:scale-110 transition-transform duration-1000" data-alt="A minimalist art gallery with polished concrete floors and dark walls. Large-scale abstract canvases with gold leaf accents are displayed under precise gallery track lighting. The space is silent and sophisticated, reflecting a high-end contemporary art exhibition environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCooZIMYBve4wfLwvpqA7s8crPB0BWOQENq4GJbn7ucRbkT0N2thb2YtsrmNdHwFn8DtUTJbSp9BKW_mmgiN58fRQQz9i-QWQtBhXHAUmaaBtttki4GloP0r3sHvxqXN0UNpYPHT71TNFKmh07vR0NPW0Qs0SQ02W5M0sj6cSdkYw-jlNfVLa3Op0XAd34BDv1wGPWmG0U5D0v4yFdNiDg3-RXqCvvDcbOdhHODPNLwskwB-mWiEzRzp7I5Mku9PlxBmUAVYdNIXgeH"/>
+</div>
+<div class="md:w-1/2 p-10 flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-primary mb-2">Art &amp; Culture</span>
+<h3 class="font-headline-md text-headline-md text-off-white mb-4">London Street Photography Series</h3>
+<p class="text-muted-silver mb-8">An exclusive retrospective featuring local artists from the Broadwick stable.</p>
+<a class="inline-block py-3 px-6 border border-primary text-primary font-label-md text-center hover:bg-primary hover:text-background transition-all" href="#">View Exhibition Details</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Regular Events (List Section) -->
+<section class="py-32 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg text-off-white mb-4">Daily Rituals</h2>
+<p class="text-muted-silver">The heartbeat of Corner Corner. Regular gatherings that build our community.</p>
+</div>
+<div class="space-y-0">
+<!-- Item 1 -->
+<div class="group flex flex-col md:flex-row items-center py-12 border-t border-gold-glass-stroke hover:bg-white/[0.02] transition-all px-4">
+<div class="w-20 font-headline-md text-primary opacity-30 mb-4 md:mb-0">01</div>
+<div class="flex-grow">
+<h3 class="font-headline-md text-headline-md text-off-white group-hover:translate-x-2 transition-transform duration-500">Run Club</h3>
+<p class="text-muted-silver">Every Tuesday &amp; Thursday • 7:00 AM</p>
+</div>
+<div class="md:w-1/3 text-muted-silver italic text-sm mt-4 md:mt-0">Join our community run around the canal, followed by complimentary coffee.</div>
+<div class="mt-6 md:mt-0 md:ml-12">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:rotate-45 transition-transform duration-500">north_east</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group flex flex-col md:flex-row items-center py-12 border-t border-gold-glass-stroke hover:bg-white/[0.02] transition-all px-4">
+<div class="w-20 font-headline-md text-primary opacity-30 mb-4 md:mb-0">02</div>
+<div class="flex-grow">
+<h3 class="font-headline-md text-headline-md text-off-white group-hover:translate-x-2 transition-transform duration-500">The Farm Tours</h3>
+<p class="text-muted-silver">Saturdays • 10:00 AM</p>
+</div>
+<div class="md:w-1/3 text-muted-silver italic text-sm mt-4 md:mt-0">Explore our rooftop garden and learn about urban agriculture and sustainability.</div>
+<div class="mt-6 md:mt-0 md:ml-12">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:rotate-45 transition-transform duration-500">north_east</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group flex flex-col md:flex-row items-center py-12 border-y border-gold-glass-stroke hover:bg-white/[0.02] transition-all px-4">
+<div class="w-20 font-headline-md text-primary opacity-30 mb-4 md:mb-0">03</div>
+<div class="flex-grow">
+<h3 class="font-headline-md text-headline-md text-off-white group-hover:translate-x-2 transition-transform duration-500">Daily Desk</h3>
+<p class="text-muted-silver">Weekdays • 9:00 AM - 5:00 PM</p>
+</div>
+<div class="md:w-1/3 text-muted-silver italic text-sm mt-4 md:mt-0">Drop-in workspace for local creatives. Quiet zones and super-fast fibre.</div>
+<div class="mt-6 md:mt-0 md:ml-12">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:rotate-45 transition-transform duration-500">north_east</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Artist/Performer Grid -->
+<section class="py-32">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg text-off-white mb-6">Programmed by Broadwick</h2>
+<p class="text-muted-silver max-w-2xl mx-auto">We partner with Broadwick Live to bring world-class talent and emerging local legends to the Corner Corner stage.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Performer 1 -->
+<div class="group text-center">
+<div class="aspect-square mb-6 overflow-hidden glass-panel">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="A portrait of a contemporary jazz musician with a saxophone, backlit by soft blue and gold stage lights. The image has a grainy, film-like quality, emphasizing a soulful and professional artistic identity. The background is a dark, out-of-focus lounge setting that fits the premium dark aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr8feIWeFm308mzgItxR_Y6jM-LjcRLphSSpYiKix1bCnc1YWigOtT-meMpTN85nGzOGytNyXdHXcbDDF-r-cShIWTsPtgeDYoyf-5qIaaaT4ITXTaaKn06XIg-h7Fkpv0bDGj4i6N4uyfBum_Di65I6-VfgKuwZpKaw0zN3L24eSFTz6_JIqvP5gc8LfzNCk9mF9pwaEt4C_XVYjMLQMZ5DCVY0n20srtSjPziJ-8GhZdG1HIk6kMux3Ph5NVpvnoLLR2CB6bYZAY"/>
+</div>
+<h4 class="font-headline-md text-headline-md text-off-white mb-1">Elias Thorne</h4>
+<p class="text-primary font-label-sm uppercase tracking-wider">Neo-Soul / Jazz</p>
+</div>
+<!-- Performer 2 -->
+<div class="group text-center">
+<div class="aspect-square mb-6 overflow-hidden glass-panel">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="A professional female DJ in a stylish dark studio, wearing headphones and focused on high-end silver turntables. The lighting is low-key with golden reflections on the vinyl records. The atmosphere is one of focused artistry and premium electronic music culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7jyJV2klyNKzvAqJfMNTgGfMCIdRUaoKgWdqM1xkz98vq3eb4Pq8qnrmMMx0hgzDabR5QNml3ikCJ5bMtm2LTXH5IjbqKclvCQ181eiKDUl8JNV11IiZYgSOz9-IBmieONIMkjVrFPS7vN5HEGWsV3l9gzMZDdH8K5pwmMGBmZRtCTetpAzSYTQMk_vsuFScsmnna6zf6gpiyhhBl2Ka63Rynuf0ZCPSrEAPHlsr9dOTrDjwQVvuY4qrPA0vnY20y06nfmynovLzD"/>
+</div>
+<h4 class="font-headline-md text-headline-md text-off-white mb-1">Maya Glass</h4>
+<p class="text-primary font-label-sm uppercase tracking-wider">Deep House</p>
+</div>
+<!-- Performer 3 -->
+<div class="group text-center">
+<div class="aspect-square mb-6 overflow-hidden glass-panel">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="A minimalist portrait of an indie-folk singer-songwriter with an acoustic guitar in a rustic setting. Soft afternoon light falls across their face, creating gentle shadows. The mood is intimate and authentic, perfectly aligned with the boutique communal vibe of the venue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWeLQlS78QroFoFkdKwvWKV5gyQCZoc7yl46KhRrSeY23y8lY5jQ5Twz-LT7STEV5ZZ9SDl6rgO9baAwNc8rUaiTCZdD37x33w4TGz3K4cdyCHUvlA-vKp7g6jhBiO6xhTCoerp5W054MwfGbrdTuS1lfHnFhuYtF-cpziy34S3QUwkAC1JPE-smeh7VAc-W4nKsHkoHsNxEZC7L237lWuGfL3W86oJ4-fSyEdNkLyIN2WKdTtyXmZXb_R68_Xgyalnds2jOkg-NdE"/>
+</div>
+<h4 class="font-headline-md text-headline-md text-off-white mb-1">The High Notes</h4>
+<p class="text-primary font-label-sm uppercase tracking-wider">Acoustic Collective</p>
+</div>
+<!-- Performer 4 -->
+<div class="group text-center">
+<div class="aspect-square mb-6 overflow-hidden glass-panel">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" data-alt="A vintage silver microphone standing alone on a dark stage, illuminated by a sharp top-down spotlight. The lighting creates strong highlights and deep blacks, evoking a classic cinematic jazz era feel. The image represents the prestige and heritage of the performers programmed for the venue." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLy0fMpTsWbPMvasoONAQNsnJXPNFLEF7ZjNcYgQkytOnOaDocC5ieJ1TLVZhQuqq4c5zgF-N3g3AIkT8VOz39e4VejMSxt229gncaan0umkifukYQCCjgxOJoxQXw4JGUQOgxpUMhGsaJK82QbI-u13tyLeQHHoHRQA3HKTfWvdOcuMbbiUvxu0Vv3X9Dn2lFeCMc0nyhHmVFTb_6zt5M0kH1dzWZ_o1B4VmwsL5ntGYiZ8DWKDF6DVqrCv-_rP-Xh8qNUq-gGBGZ"/>
+</div>
+<h4 class="font-headline-md text-headline-md text-off-white mb-1">Broadwick Curated</h4>
+<p class="text-primary font-label-sm uppercase tracking-wider">Special Guests</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Component: Venue Switcher -->
+<section class="h-[614px] relative overflow-hidden bg-surface-container">
+
+<div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
+<h2 class="font-display-lg text-display-lg text-off-white mb-12">Explore Our Spaces</h2>
+<div class="flex flex-wrap justify-center gap-12">
+<a class="group" href="#">
+<span class="font-headline-md text-headline-md text-muted-silver group-hover:text-primary transition-colors">The Lounge</span>
+<div class="h-[2px] w-0 bg-primary group-hover:w-full transition-all duration-500 mx-auto mt-2"></div>
+</a>
+<a class="group" href="#">
+<span class="font-headline-md text-headline-md text-muted-silver group-hover:text-primary transition-colors">The Yard</span>
+<div class="h-[2px] w-0 bg-primary group-hover:w-full transition-all duration-500 mx-auto mt-2"></div>
+</a>
+<a class="group" href="#">
+<span class="font-headline-md text-headline-md text-muted-silver group-hover:text-primary transition-colors">The Farm</span>
+<div class="h-[2px] w-0 bg-primary group-hover:w-full transition-all duration-500 mx-auto mt-2"></div>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 bg-surface-container-lowest border-t border-gold-glass-stroke">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="flex flex-col gap-6">
+<h3 class="font-headline-md text-headline-md text-primary">Corner Corner</h3>
+<p class="text-muted-silver text-label-md">123 Hackney Road, London<br/>E2 7NP, United Kingdom</p>
+<div class="flex gap-4 mt-4">
+<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">brand_family</span></a>
+<a class="text-secondary hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Connect</h4>
+<ul class="space-y-4">
+<li><a class="font-label-md text-label-md text-muted-silver hover:text-primary transition-colors" href="#">Newsletter</a></li>
+<li><a class="font-label-md text-label-md text-muted-silver hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="font-label-md text-label-md text-muted-silver hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-label-md text-label-md text-muted-silver hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-label-md text-label-md text-muted-silver hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-label-md text-label-md text-muted-silver hover:text-primary transition-colors" href="#">Accessibility</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary mb-6 uppercase tracking-widest">Join The Club</h4>
+<div class="relative">
+<input class="w-full bg-deep-gray border border-[#4f4f4f] px-4 py-3 text-off-white focus:border-primary focus:ring-0 transition-colors" placeholder="Your email" type="email"/>
+<button class="absolute right-2 top-2 text-primary p-1"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-20 pt-8 border-t border-gold-glass-stroke">
+<p class="text-label-sm text-label-sm text-muted-silver">© 2024 Corner Corner London. All Rights Reserved.</p>
+</div>
+</footer>
+<script>
+        // Simple parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('header img');
+            heroImage.style.transform = `translateY(${scrolled * 0.4}px)`;
+        });
+
+        // Horizontal scroll animation for bento grid cards on appear
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-panel').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000');
+            observer.observe(card);
+        });
+    </script>
+</body></html>
