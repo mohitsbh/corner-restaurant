@@ -180,12 +180,12 @@ export default function Layout() {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent animate-pulse-glow" />
           )}
           <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 flex items-center justify-between h-14 lg:h-16">
-            <Link to="/" className={`text-white transition-all duration-500 hover:text-gold flex items-center h-full mr-6 lg:mr-8 ${scrolled ? 'w-20' : 'w-24 sm:w-28'}`}>
+            <Link to="/" className={`text-white transition-all duration-500 hover:text-gold flex items-center h-full mr-3 lg:mr-5 ${scrolled ? 'w-20' : 'w-24 sm:w-28'}`}>
               <Logo className="w-full h-auto" />
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-2 xl:gap-3 2xl:gap-5">
+            <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2 2xl:gap-4">
               {NAV_LINKS.map(link =>
                 link.sub ? (
                   <DesktopDropdown key={link.label} item={link} pathname={pathname} />
