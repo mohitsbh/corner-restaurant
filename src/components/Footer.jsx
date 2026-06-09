@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_2fr_1.5fr] gap-12 mb-12">
           <div>
-            <Link to="/" className="text-white inline-block w-[100px]"><Logo className="w-full h-auto" /></Link>
+            <Link to="/" className="text-white inline-block w-[100px]"><Logo className="w-full" /></Link>
             <p className="text-sm text-[#666] mt-4 leading-relaxed">
               Crafted in Partnership by<br />
               <a href="http://broadwick.com" target="_blank" rel="noopener" className="text-[#b8b0a8] hover:text-gold transition-colors">Broadwick</a> &{' '}
