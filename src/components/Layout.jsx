@@ -81,10 +81,9 @@ function CursorFollower() {
 
 function NavLink({ to, children, active, onClick }) {
   return (
-    <Link to={to} onClick={onClick} className={`relative text-sm tracking-[0.12em] uppercase whitespace-nowrap shrink-0 transition-colors py-2 group ${active ? 'text-gold' : 'text-white/60 hover:text-white'}`}>
-      <span className={`absolute -top-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full transition-all duration-300 ${active ? 'bg-gold opacity-100' : 'opacity-0 group-hover:opacity-40'}`} />
+    <Link to={to} onClick={onClick} className={`relative text-[11px] tracking-[0.1em] uppercase whitespace-nowrap shrink-0 transition-colors py-1.5 group ${active ? 'text-gold' : 'text-white/50 hover:text-white'}`}>
       {children}
-      <span className={`absolute -bottom-0 left-0 h-[1.5px] bg-gold transition-all duration-500 ease-out ${active ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+      <span className={`absolute -bottom-0 left-0 h-[1px] bg-gold transition-all duration-500 ease-out ${active ? 'w-full' : 'w-0 group-hover:w-full'}`} />
     </Link>
   )
 }
@@ -109,20 +108,20 @@ function DesktopDropdown({ item, pathname }) {
 
   return (
     <li ref={ref} className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-      <button className={`relative text-sm tracking-[0.12em] uppercase whitespace-nowrap shrink-0 transition-colors py-2 flex items-center gap-1.5 group ${isActive ? 'text-gold' : 'text-white/60 hover:text-white'}`}>
+      <button className={`relative text-[11px] tracking-[0.1em] uppercase whitespace-nowrap shrink-0 transition-colors py-1.5 flex items-center gap-1 group ${isActive ? 'text-gold' : 'text-white/50 hover:text-white'}`}>
         {item.label}
-        <svg className={`w-3 h-3 transition-all duration-300 ${open ? 'rotate-180' : ''}`} viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 4.5L6 7.5L9 4.5" /></svg>
-        <span className={`absolute -bottom-0 left-0 h-[1.5px] bg-gold transition-all duration-500 ease-out ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+        <svg className={`w-2.5 h-2.5 transition-all duration-300 ${open ? 'rotate-180' : ''}`} viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 4.5L6 7.5L9 4.5" /></svg>
+        <span className={`absolute -bottom-0 left-0 h-[1px] bg-gold transition-all duration-500 ease-out ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
       </button>
-      <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 transition-all duration-300 ${open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
+      <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 transition-all duration-300 ${open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
         {/* Tail */}
-        <div className={`absolute -top-[5px] left-1/2 -translate-x-1/2 w-2.5 h-2.5 rotate-45 bg-[#0e0e0e] border-l border-t border-white/[0.06] transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0'}`} />
-        <div className="bg-[#0e0e0e]/98 backdrop-blur-2xl border border-white/[0.06] rounded-xl p-1.5 shadow-2xl shadow-black/70 overflow-hidden relative">
+        <div className={`absolute -top-[5px] left-1/2 -translate-x-1/2 w-2 h-2 rotate-45 bg-[#0e0e0e] border-l border-t border-white/[0.06] transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0'}`} />
+        <div className="bg-[#0e0e0e]/98 backdrop-blur-2xl border border-white/[0.06] rounded-xl p-1 shadow-2xl shadow-black/70 overflow-hidden relative">
           {item.sub.map((s, i) => (
             <Link key={s.label} to={s.to} onClick={() => setOpen(false)}
-              className={`flex items-center gap-3 px-4 py-3 text-sm rounded-lg transition-all ${i > 0 ? 'mt-0.5' : ''} text-[#b8b0a8] hover:text-white hover:bg-white/[0.04] ${open ? 'translate-y-0 opacity-100' : 'translate-y-1 opacity-0'}`}
+              className={`flex items-center gap-2.5 px-3.5 py-2.5 text-xs rounded-lg transition-all ${i > 0 ? 'mt-0.5' : ''} text-[#b8b0a8] hover:text-white hover:bg-white/[0.04] ${open ? 'translate-y-0 opacity-100' : 'translate-y-1 opacity-0'}`}
               style={{ transitionDelay: `${i * 60}ms`, transitionProperty: 'all', transitionDuration: '300ms', transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}>
-              <svg className="w-4 h-4 text-gold shrink-0" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+              <svg className="w-3.5 h-3.5 text-gold shrink-0" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d={DROPDOWN_ICONS[s.label] || 'M7 1v12M1 7h12'} />
               </svg>
               {s.label}
@@ -180,13 +179,13 @@ export default function Layout() {
           {scrolled && (
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent animate-pulse-glow" />
           )}
-          <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 flex items-center justify-between h-16 lg:h-[72px]">
-            <Link to="/" className={`text-white transition-all duration-500 hover:text-gold flex items-center h-full mr-8 lg:mr-14 ${scrolled ? 'w-28' : 'w-36 sm:w-40'}`}>
-              <Logo className="w-full h-auto mt-2" />
+          <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 flex items-center justify-between h-14 lg:h-16">
+            <Link to="/" className={`text-white transition-all duration-500 hover:text-gold flex items-center h-full mr-6 lg:mr-8 ${scrolled ? 'w-20' : 'w-24 sm:w-28'}`}>
+              <Logo className="w-full h-auto" />
             </Link>
 
             {/* Desktop nav */}
-            <nav className="hidden lg:flex items-center gap-5 xl:gap-7 2xl:gap-10">
+            <nav className="hidden lg:flex items-center gap-2 xl:gap-3 2xl:gap-5">
               {NAV_LINKS.map(link =>
                 link.sub ? (
                   <DesktopDropdown key={link.label} item={link} pathname={pathname} />
@@ -194,13 +193,12 @@ export default function Layout() {
                   <NavLink key={link.to} to={link.to} active={pathname === link.to}>{link.label}</NavLink>
                 )
               )}
-              <div className="w-px h-5 bg-white/8" />
-              <a href="tel:02033702305" className="text-xs text-[#777] hover:text-gold transition-colors whitespace-nowrap shrink-0 flex items-center gap-1.5">
-                <svg className="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 1.5L4.5 1L6 4L4.5 5.5C5.5 7.5 7 9 9 9.5L10.5 8L13 9.5L12.5 11.5C11.5 13 9.5 13.5 8 12.5C5.5 11 3 8.5 1.5 6C0.5 4.5 1 2.5 2.5 1.5Z" /></svg>
-                <span>020 3370 2305</span>
+              <div className="w-px h-4 bg-white/[0.06]" />
+              <a href="tel:02033702305" className="text-[11px] text-[#666] hover:text-gold transition-colors whitespace-nowrap shrink-0">
+                020 3370 2305
               </a>
-              <Link to="/book" className="inline-flex items-center justify-center font-semibold rounded-full transition-all duration-300 cursor-pointer border relative overflow-hidden btn-shine bg-gold text-[#0a0a0a] border-transparent hover:bg-gold-light hover:shadow-lg hover:shadow-gold/30 active:scale-[0.95] px-5 py-2.5 text-xs tracking-wider uppercase shadow-lg shadow-gold/20 hover:shadow-gold/40 gap-2">
-                <svg className="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 2v2M10 2v2M2 6h10M3 2.5h8A1.5 1.5 0 0112.5 4v7A1.5 1.5 0 0111 12.5H3A1.5 1.5 0 011.5 11V4A1.5 1.5 0 013 2.5z"/></svg>
+              <Link to="/book" className="inline-flex items-center justify-center font-semibold rounded-full transition-all duration-300 cursor-pointer border relative overflow-hidden btn-shine bg-gold text-[#0a0a0a] border-transparent hover:bg-gold-light hover:shadow-lg hover:shadow-gold/30 active:scale-[0.95] px-4 py-1.5 text-[10px] tracking-wider uppercase shadow-lg shadow-gold/20 gap-1.5">
+                <svg className="w-3 h-3" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 2v2M10 2v2M2 6h10M3 2.5h8A1.5 1.5 0 0112.5 4v7A1.5 1.5 0 0111 12.5H3A1.5 1.5 0 011.5 11V4A1.5 1.5 0 013 2.5z"/></svg>
                 Book Now
               </Link>
             </nav>
@@ -263,7 +261,7 @@ export default function Layout() {
         </div>
       </div>
 
-      <main className="flex-1 pt-16 lg:pt-[72px]"><Outlet /></main>
+      <main className="flex-1 pt-14 lg:pt-16"><Outlet /></main>
       <Footer />
     </div>
   )
