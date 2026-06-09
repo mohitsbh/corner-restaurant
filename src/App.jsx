@@ -8,6 +8,7 @@ import Farm from './pages/Farm'
 import About from './pages/About'
 import Book from './pages/Book'
 import WorldCup from './pages/WorldCup'
+import Contact from './pages/Contact'
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/book" element={<Book />} />
         <Route path="/world-cup" element={<WorldCup />} />
+        <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
   )

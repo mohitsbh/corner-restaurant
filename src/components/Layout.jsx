@@ -6,6 +6,7 @@ import Logo from './Logo'
 import { BackToTop, Button } from './UI'
 
 const NAV_LINKS = [
+  { to: '/', label: 'Home' },
   { to: '/food', label: 'Food & Drink' },
   {
     label: "What's On", to: '/events',
@@ -23,6 +24,7 @@ const NAV_LINKS = [
   },
   { to: '/farm', label: 'Vertical Farm' },
   { to: '/about', label: 'Info' },
+  { to: '/contact', label: 'Contact' },
 ]
 
 function MobileNavItem({ link, pathname, menuOpen, index, onClose }) {
