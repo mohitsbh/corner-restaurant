@@ -182,7 +182,7 @@ export default function Layout() {
           )}
           <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 flex items-center justify-between h-16 lg:h-[72px]">
             <Link to="/" className={`text-white transition-all duration-500 hover:text-gold flex items-center h-full mr-8 lg:mr-14 ${scrolled ? 'w-28' : 'w-36 sm:w-40'}`}>
-              <span className="mt-2 flex"><Logo /></span>
+              <Logo className="w-full h-auto mt-2" />
             </Link>
 
             {/* Desktop nav */}
@@ -223,7 +223,7 @@ export default function Layout() {
           <div className="flex items-center justify-between pt-6 pb-2 px-6 relative">
             <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-gold/30 via-gold/10 to-transparent" />
             <Link to="/" onClick={() => setMenuOpen(false)} className="text-white w-24 block">
-              <Logo small />
+              <Logo className="w-full h-auto" />
             </Link>
             <button onClick={() => setMenuOpen(false)} className="w-8 h-8 flex items-center justify-center bg-white/[0.04] hover:bg-white/10 rounded-full transition-colors -mr-1" aria-label="Close menu">
               <svg className="w-3.5 h-3.5 text-white/60" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 2L10 10M10 2L2 10" /></svg>
