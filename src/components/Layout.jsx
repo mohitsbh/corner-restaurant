@@ -96,22 +96,36 @@ const DROPDOWN_ICONS = {
 function DesktopDropdown({ item, pathname }) {
   const [open, setOpen] = useState(false)
   const ref = useRef(null)
+  const timer = useRef(null)
   const isActive = pathname.startsWith(item.to)
 
+  const handleMouseEnter = () => {
+    clearTimeout(timer.current)
+    setOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    timer.current = setTimeout(() => setOpen(false), 200)
+  }
+
   useEffect(() => {
+    clearTimeout(timer.current)
     const handler = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false) }
     document.addEventListener('mousedown', handler)
-    return () => document.removeEventListener('mousedown', handler)
+    return () => {
+      clearTimeout(timer.current)
+      document.removeEventListener('mousedown', handler)
+    }
   }, [])
 
   return (
-    <li ref={ref} className="relative" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-      <button className={`font-label-md text-label-md whitespace-nowrap shrink-0 transition-colors py-1.5 flex items-center gap-1 group ${isActive ? 'text-primary' : 'text-on-surface-variant hover:text-primary transition-colors'}`}>
+    <li ref={ref} className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <Link to={item.to} className={`font-label-md text-label-md whitespace-nowrap shrink-0 transition-colors py-1.5 flex items-center gap-1 group ${isActive ? 'text-primary' : 'text-on-surface-variant hover:text-primary transition-colors'}`}>
         {item.label}
         <svg className={`w-3 h-3 transition-all duration-300 ${open ? 'rotate-180' : ''}`} viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 4.5L6 7.5L9 4.5" /></svg>
-      </button>
-      <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 transition-all duration-300 ${open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
-        <div className={`absolute -top-[5px] left-1/2 -translate-x-1/2 w-2 h-2 rotate-45 bg-surface-container-lowest border-l border-t border-gold-glass-stroke transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0'}`} />
+      </Link>
+      <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-48 transition-all duration-300 ${open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-3 pointer-events-none'}`}>
+        <div className={`absolute top-[3px] left-1/2 -translate-x-1/2 w-2 h-2 rotate-45 bg-surface-container-lowest border-l border-t border-gold-glass-stroke transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0'}`} />
         <div className="bg-surface-container-lowest/98 backdrop-blur-2xl border border-gold-glass-stroke rounded-xl p-1.5 shadow-2xl shadow-black/70 overflow-hidden relative">
           {item.sub.map((s, i) => (
             <Link key={s.label} to={s.to} onClick={() => setOpen(false)}
